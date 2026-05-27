@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.galgame.android">
+
+	
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    
+    <!-- 外部存储（Android 10 及以下） -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+
+    <!-- Android 11+ 访问 Android/data -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+	
+	
+	<!-- 联网权限 -->
+	<uses-permission android:name="android.permission.INTERNET" />
+
+	<!-- Android 8+ 必须 -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:resizeableActivity="true"
+        android:name=".GlobalApplication">
+
+        <activity
+            android:name="com.GalDroid"
+            android:label="@string/app_name"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+
+            </intent-filter>
+
+        </activity>
+		<activity
+            android:name="com.galgame.android.InDex"
+            android:label="@string/app_name"
+            android:exported="true">
+		</activity>
+		<activity
+            android:name="com.galgame.android.Key"
+            android:label="@string/app_name"
+            android:exported="true">
+		</activity>
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="4.0"/>
+
+        <activity android:name=".GlobalApplication$CrashActivity"/>
+
+    </application>
+
+</manifest>
+
